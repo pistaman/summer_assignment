@@ -1,11 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  titles: MyString
-  contents: MyText
-  is_done: false
+  title: MyString
+  varchar: MyString
+  contents: MyString
+  text: MyString
+  is_done: MyString
+  boolean: MyString
 
 two:
-  titles: MyString
-  contents: MyText
-  is_done: false
+  title: MyString
+  varchar: MyString
+  contents: MyString
+  text: MyString
+  is_done: MyString
+  boolean: MyString
