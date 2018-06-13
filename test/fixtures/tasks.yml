@@ -2,16 +2,10 @@
 
 one:
   title: MyString
-  varchar: MyString
-  contents: MyString
-  text: MyString
-  is_done: MyString
-  boolean: MyString
+  contents: MyText
+  is_done: false
 
 two:
   title: MyString
-  varchar: MyString
-  contents: MyString
-  text: MyString
-  is_done: MyString
-  boolean: MyString
+  contents: MyText
+  is_done: false
