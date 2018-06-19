@@ -1,7 +1,46 @@
-<h1>TODO list</h1>
-
-<form class="index__page--form" action="index.html" method="post">
-  <input type="text" name="" value="">
-  <label for=""></label>
-  <input type="text" name="" value="">
-</form>
+<div class="index__wrapper">
+  <h1>TODO list</h1>
+  <%= render 'form' %>
+  <div class="task__lists">
+    <h2>TODO</h2>
+    <% @tasks.each do | task | %>
+    <div class="task__list">
+      <div class="task__list--name">
+        <%= task.title %>
+      </div>
+      <div class="task__list--body">
+        <%= task.content %>
+      </div>
+      <div class="task__list--buttons">
+        <div class="task__list--edit">
+          <%= link_to "編集する", edit_task_path(task.id) %>
+        </div>
+        <div class="task__list--toggle">
+          <a href="#">TODOにする</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="task__lists">
+    <h2>DONE</h2>
+    <% @tasks.each do | task | %>
+    <div class="task__list">
+      <div class="task__list--name">
+        <%= task.title %>
+      </div>
+      <div class="task__list--body">
+        <%= task.content %>
+      </div>
+      <div class="task__list--buttons">
+        <div class="task__list--edit">
+          <a href="#">編集</a>
+        </div>
+        <div class="task__list--toggle">
+          <a href="#">DONEにする</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<%= form_with model: @task, local:true, html: {class: 'index__page--form'} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :title %>
+  <%= f.label :body %>
+  <%= f.text_field :content %>
+  <%= f.submit "作成" %>
+<% end %>
