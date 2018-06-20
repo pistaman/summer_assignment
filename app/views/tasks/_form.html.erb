@@ -1,7 +1,15 @@
 <%= form_with model: @task, local:true, html: {class: 'index__page--form'} do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :title %>
+  <%= f.text_field :name %>
   <%= f.label :body %>
   <%= f.text_field :content %>
+  <% if request.path_info == tasks_path %>
   <%= f.submit "作成" %>
+  <% else %>
+  <%= f.submit "更新" %>
+  <% end %>
+  <% if @task.errors.any? %>
+    <p class="error"><%= @task.errors.messages[:name][0] %><p>
+    <p class="error"><%= @task.errors.messages[:content][0] %><p>
+  <% end %>
 <% end %>
