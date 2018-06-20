@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   # get '/', to: 'tasks#index'
   # get '/', to: 'tasks#new'
   # post '/tasks', to: 'tasks#create'
-  resources :tasks, path: '/'
+  resources :tasks, path: '/', only: [:index,:create,:edit,:update]
 end
