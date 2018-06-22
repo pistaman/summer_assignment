@@ -33,7 +33,6 @@ class TasksController < ApplicationController
   def toggle
     @task = Task.find(params[:id])
     @task.toggle!(:is_done)
-    redirect_to tasks_path
   end
 
   private
