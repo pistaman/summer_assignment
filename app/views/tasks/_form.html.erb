@@ -8,8 +8,4 @@
   <% else %>
   <%= f.submit "更新" %>
   <% end %>
-  <% if @task.errors.any? %>
-    <p class="error"><%= @task.errors.messages[:name][0] %><p>
-    <p class="error"><%= @task.errors.messages[:content][0] %><p>
-  <% end %>
 <% end %>

@@ -1,10 +1,12 @@
 <div class="index__wrapper">
+  <%= notice %>
+  <%= flash.now[:error] %>
   <h1>TODO list</h1>
   <%= render 'form' %>
   <div class="task__wrapper">
     <div class="task__lists">
       <h2>TODO</h2>
-      <% @tasks.each do | task | %>
+      <% @tasks.each do |task| %>
         <% if task.is_done == false %>
         <div class="task__list">
           <div class="task__list--name">
@@ -18,7 +20,7 @@
               <%= link_to "編集する", edit_task_path(task.id) %>
             </div>
             <div class="task__list--toggle">
-              <a href="#">TODOにする</a>
+              <%= link_to "DONEにする", toggle_path(task.id) %>
             </div>
           </div>
         </div>
@@ -28,7 +30,7 @@
     </div>
     <div class="task__lists">
       <h2>DONE</h2>
-      <% @tasks.each do | task | %>
+      <% @tasks.each do |task| %>
       <% if task.is_done == true %>
       <div class="task__list">
         <div class="task__list--name">
@@ -39,10 +41,10 @@
         </div>
         <div class="task__list--buttons">
           <div class="task__list--edit">
-            <a href="#">編集</a>
+            <%= link_to "編集する", edit_task_path(task.id) %>
           </div>
           <div class="task__list--toggle">
-            <a href="#">DONEにする</a>
+            <%= link_to "TODOにする", toggle_path(task.id) %>
           </div>
         </div>
       </div>
