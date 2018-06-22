@@ -44,7 +44,7 @@
             <%= link_to "編集する", edit_task_path(task.id) %>
           </div>
           <div class="task__list--toggle">
-            <%= link_to "TODOにする", toggle_path(task.id) %>
+            <%= link_to "TODOにする", toggle_path(task.id),method: :patch %>
           </div>
         </div>
       </div>
