@@ -8,22 +8,22 @@
       <h2>TODO</h2>
       <% @tasks.each do |task| %>
         <% if task.is_done == false %>
-        <div class="task__list">
-          <div class="task__list--name">
-            <%= task.name %>
-          </div>
-          <div class="task__list--body">
-            <%= task.content %>
-          </div>
-          <div class="task__list--buttons">
-            <div class="task__list--edit">
-              <%= link_to "編集する", edit_task_path(task.id) %>
+          <div class="task__list">
+            <div class="task__list--name">
+              <%= task.name %>
             </div>
-            <div class="task__list--toggle">
-              <%= link_to "DONEにする",toggle_path(task.id),method: :patch %>
+            <div class="task__list--body">
+              <%= task.content %>
+            </div>
+            <div class="task__list--buttons">
+              <div class="task__list--edit">
+                <%= link_to "編集する", edit_task_path(task.id) %>
+              </div>
+              <div class="task__list--toggle">
+                <%= link_to "DONEにする",toggle_path(task.id),method: :patch %>
+              </div>
             </div>
           </div>
-        </div>
         <% else %>
         <% end %>
       <% end %>
@@ -31,23 +31,23 @@
     <div class="task__lists">
       <h2>DONE</h2>
       <% @tasks.each do |task| %>
-      <% if task.is_done == true %>
-      <div class="task__list">
-        <div class="task__list--name">
-          <%= task.name %>
-        </div>
-        <div class="task__list--body">
-          <%= task.content %>
-        </div>
-        <div class="task__list--buttons">
-          <div class="task__list--edit">
-            <%= link_to "編集する", edit_task_path(task.id) %>
+        <% if task.is_done == true %>
+          <div class="task__list">
+            <div class="task__list--name">
+              <%= task.name %>
+            </div>
+            <div class="task__list--body">
+              <%= task.content %>
+            </div>
+            <div class="task__list--buttons">
+              <div class="task__list--edit">
+                <%= link_to "編集する", edit_task_path(task.id) %>
+              </div>
+              <div class="task__list--toggle">
+                <%= link_to "TODOにする", toggle_path(task.id),method: :patch %>
+              </div>
+            </div>
           </div>
-          <div class="task__list--toggle">
-            <%= link_to "TODOにする", toggle_path(task.id),method: :patch %>
-          </div>
-        </div>
-      </div>
         <% else %>
         <% end %>
       <% end %>

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   # get '/', to: 'tasks#new'
   # post '/tasks', to: 'tasks#create'
   resources :tasks, path: '/', only: [:index,:create,:edit,:update,:toggle]
-  patch '/toggle/:id', to: 'tasks#toggle', as: 'toggle'
+  patch '/tasks/:id/toggle', to: 'tasks#toggle', as: 'toggle'
 end
