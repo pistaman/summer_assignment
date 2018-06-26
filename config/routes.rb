@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # get '/', to: 'tasks#index'
   # get '/', to: 'tasks#new'
   # post '/tasks', to: 'tasks#create'
-  resources :tasks, path: '/', only: [:index,:create,:edit,:update,:toggle]
+  resources :tasks, only: [:create,:edit,:update,:toggle]
+  root to: 'tasks#index', only: [:index]
   patch '/tasks/:id/toggle', to: 'tasks#toggle', as: 'toggle'
 end

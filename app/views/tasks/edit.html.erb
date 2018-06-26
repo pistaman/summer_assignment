@@ -1,4 +1,4 @@
-<% if flash[:error] %>
+<% if flash.now[:error] %>
   <p class="flash__message--error"><%= flash.now[:error] %></p>
 <% end %>
 <%= render 'form' %>

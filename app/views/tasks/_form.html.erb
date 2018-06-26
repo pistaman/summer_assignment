@@ -3,7 +3,7 @@
   <%= f.text_field :name %>
   <%= f.label :body %>
   <%= f.text_field :content %>
-  <% if request.path_info == tasks_path %>
+  <% if request.path_info == root_path %>
   <%= f.submit "作成" %>
   <% else %>
   <%= f.submit "更新" %>
