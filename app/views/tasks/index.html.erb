@@ -1,7 +1,10 @@
 <div class="index__wrapper">
-  <%= notice %>
-  <%= flash.now[:error] %>
-  <h1>TODO listaaaaaaaaaaaaaaaaa</h1>
+  <% if flash[:notice] %>
+    <p class="flash__message--success"><%= notice %></p>
+  <% elsif flash[:error] %>
+    <p class="flash__message--error"><%= flash.now[:error] %></p>
+  <% end %>
+  <h1>TODO list</h1>
   <%= render 'form' %>
   <div class="task__wrapper">
     <div class="task__lists">
