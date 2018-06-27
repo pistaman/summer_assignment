@@ -1,11 +1,15 @@
-<%= form_with model: @task, local:true, html: {class: 'index__page--form'} do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :body %>
-  <%= f.text_field :content %>
+<%= form_with model: @task, local:true ,html: {class: 'index__page--form'} do |f| %>
+  <%= f.text_field :name,placeholder:'name' %>
+  <%= f.text_field :content,placeholder:'content' %>
   <% if request.path_info == root_path %>
-  <%= f.submit "作成" %>
+  <div id="task_input">
+    <%= f.label :add,"create" %>
+    <%= f.submit "作成", id: "task_add" %>
+  </div>
   <% else %>
-  <%= f.submit "更新" %>
+  <div id="task_input">
+    <%= f.label :edit,"edit" %>
+    <%= f.submit "作成", id: "task_edit" %>
+  </div>
   <% end %>
 <% end %>
