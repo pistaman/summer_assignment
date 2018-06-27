@@ -1,5 +1,7 @@
 #task {
   &_name {
+    color: #444 !important;
+    background-color: #fff!important;
     width: 20%;
     font-size: 30px;
     border: none;
@@ -8,6 +10,8 @@
     padding-left: 10px;
   }
   &_content {
+    color: #444 !important;
+    background-color: #fff!important;
     width: 64%;
     font-size: 30px;
     padding-left: 10px;
@@ -22,7 +26,6 @@
       display: none;
     }
     & label {
-      margin: 0 10px;
       padding-bottom: 4px;
       cursor: pointer;
       &:hover {
