@@ -1,37 +1,42 @@
 <div class="index__wrapper">
-  <% if flash[:notice] %>
-    <p class="flash__message--success"><%= notice %></p>
-  <% elsif flash[:error] %>
-    <p class="flash__message--error"><%= flash.now[:error] %></p>
-  <% end %>
-  <h1>TODO list</h1>
-  <%= render 'form' %>
-  <div class="task__wrapper">
-    <div class="task__lists">
+  <div class="task__left">
+    <h1>TODO list</h1>
+    <% if flash[:notice] %>
+      <p class="flash__message--success"><%= notice %></p>
+    <% elsif flash[:error] %>
+      <p class="flash__message--error"><%= flash.now[:error] %></p>
+    <% end %>
+    <div class="modal__form"><%= render 'form' %><%= fa_icon "times 2x",class:"modal__close" %></div>
       <h2>TODO</h2>
-      <% @tasks.each do |task| %>
-        <% if task.is_done == false %>
-          <a href="<%= edit_task_path(task.id) %>" class="task__link">
-            <div class="task__list">
-              <div class="task__list--name">
-                <%= task.name %>
-              </div>
-              <div class="task__list--body">
-                <%= task.content %>
-              </div>
-              <div class="task__list--buttons">
-                <div class="task__list--toggle">
-                  <%= link_to "DONEにする",toggle_path(task.id),method: :patch %>
+      <div class="task__lists done">
+        <div class="task__add">
+           <a href="#"><%= fa_icon "plus 2x" %></a>
+        </div>
+        <% @tasks.each do |task| %>
+          <% if task.is_done == false %>
+            <a href="<%= edit_task_path(task.id) %>" class="task__link">
+              <div class="task__list">
+                <div class="task__list--name">
+                  <%= task.name %>
+                </div>
+                <div class="task__list--body done">
+                  <%= task.content %>
+                </div>
+                <div class="task__list--buttons">
+                  <div class="task__list--toggle">
+                    <%= link_to "DONEにする",toggle_path(task.id),method: :patch %>
+                  </div>
                 </div>
               </div>
-            </div>
-          </a>
-        <% else %>
+            </a>
+          <% else %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+  </div>
+  <div class="task__right">
+    <h2>DONE</h2>
     <div class="task__lists">
-      <h2>DONE</h2>
       <% @tasks.each do |task| %>
         <% if task.is_done == true %>
           <a href="<%= edit_task_path(task.id) %>" class="task__link">
