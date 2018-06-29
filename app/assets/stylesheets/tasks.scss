@@ -1,18 +1,58 @@
+body {
+  margin: 0;
+}
+h1 {
+  margin-left: 20px;
+}
 .task {
-  &__wrapper {
-    width: 95%;
-    margin: 4rem auto 0 auto;
-    display: flex;
-    justify-content: space-between;
+  &__right {
+    width: 40%;
+    background-color: rgba(128, 135, 162, 0.5);
+    padding-top: 68px;
+    & h2 {
+      width: 90%;
+      color: #fff;
+      margin: 3rem auto;
+    }
+  }
+  &__left {
+    width: 60%;
+    background-color: rgba(0,0,0,0.01);
+    & h2 {
+      width: 90%;
+      margin: 3rem auto;
+    }
   }
   &__lists {
-    width: 40%;
+    width: 90%;
+    margin: 0 auto;
+    &.done {
+      width: 94%;
+    }
   }
   &__link {
     text-decoration: none;
     color: #444;
   }
+  &__add {
+    height: 60px;
+    background-color: #fff;
+    border: 2px solid #eee;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.2);
+    & a {
+      color: #b9b9b9;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      text-decoration: none;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   &__list {
+    background-color: #fff;
     padding: 15px;
     border: 2px solid #eee;
     margin-bottom: 8px;
@@ -23,6 +63,9 @@
       font-weight: bold;
       font-size: 20px;
       border-bottom: 1px solid #eee;
+      &.done {
+        font-size: 30px;
+      }
     }
     &--buttons {
       margin-top: 20px;
@@ -38,18 +81,53 @@
   }
 }
 
+.modal {
+  &__form {
+    width: 60%;
+    display: none;
+    background-color: #fff;
+    margin: 0;
+    padding: 10px 20px 40px 20px;
+    border-radius: 4px;
+    position: fixed;
+    z-index: 10;
+    top: 40%;
+    left: 20%;
+  }
+  &__overlay {
+    z-index:1;
+  	display:none;
+  	position:fixed;
+  	top:0;
+  	left:0;
+  	width:100%;
+  	height:120%;
+  	background-color:rgba(0,0,0,.7);
+  }
+  &__close {
+    color: #c3c1c1;
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    cursor: pointer;
+    &:hover {
+      color: #444;
+    }
+  }
+}
 .index {
   &__wrapper {
+    display: flex;
     color: #444;
-    padding: 0 20px;
   }
   &__page {
     &--form {
       width: 95%;
-      margin: 4rem auto 0 auto;
+      margin: 2rem auto 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      flex-direction: column;
     }
   }
 }
@@ -62,7 +140,7 @@
     font-size: 14px;
     font-weight: bold;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px 30px;
     border-radius: 4px;
   }
   &--error {
@@ -72,7 +150,7 @@
     font-size: 14px;
     font-weight: bold;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px 30px;
     border-radius: 4px;
   }
 }

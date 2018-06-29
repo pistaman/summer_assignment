@@ -1,9 +1,9 @@
 <%= form_with model: @task, local:true ,html: {class: 'index__page--form'} do |f| %>
-  <%= f.text_field :name,placeholder:'name' %>
-  <%= f.text_field :content,placeholder:'content' %>
+  <%= f.text_field :name,placeholder:'中条あやみ' %>
+  <%= f.text_field :content,placeholder:'ハーゲンダッツを買いに行く' %>
   <% if request.path_info == root_path %>
   <div id="task_input">
-    <%= f.label :add,"create" %>
+    <%= f.label :add,"タスクを追加" %>
     <%= f.submit "作成", id: "task_add" %>
   </div>
   <% else %>
