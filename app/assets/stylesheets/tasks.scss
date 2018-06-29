@@ -7,8 +7,10 @@ h1 {
 .task {
   &__right {
     width: 40%;
+    height: 100%;
     background-color: rgba(128, 135, 162, 0.5);
     padding-top: 68px;
+    padding-bottom: 30px;
     & h2 {
       width: 90%;
       color: #fff;
@@ -49,6 +51,9 @@ h1 {
       text-decoration: none;
       justify-content: center;
       align-items: center;
+      &:hover {
+        color: #444;
+      }
     }
   }
   &__list {
@@ -65,6 +70,11 @@ h1 {
       border-bottom: 1px solid #eee;
       &.done {
         font-size: 30px;
+      }
+      &:hover {
+        &:after {
+          content: '...';
+        }
       }
     }
     &--buttons {
@@ -86,8 +96,9 @@ h1 {
     width: 60%;
     display: none;
     background-color: #fff;
+    box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.8);
     margin: 0;
-    padding: 10px 20px 40px 20px;
+    padding: 16px 20px 40px 20px;
     border-radius: 4px;
     position: fixed;
     z-index: 10;
@@ -102,7 +113,7 @@ h1 {
   	left:0;
   	width:100%;
   	height:120%;
-  	background-color:rgba(0,0,0,.7);
+  	background-color:rgba(0,0,0,.5);
   }
   &__close {
     color: #c3c1c1;
