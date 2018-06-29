@@ -28,9 +28,18 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to root_path
+  end
+
   def toggle
     @task = Task.find(params[:id])
     @task.toggle!(:is_done)
+    respond_to do |format|
+      format.html
+    end
     redirect_to root_path
   end
 

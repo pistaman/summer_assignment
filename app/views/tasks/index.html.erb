@@ -26,6 +26,7 @@
                   <div class="task__list--toggle">
                     <%= link_to "DONEにする",toggle_path(task.id),method: :patch %>
                   </div>
+                  <%= link_to "削除する",task_path(task.id),method: :delete,data: {confirm: "本当に削除しますか？"}, class:"delete" %>
                 </div>
               </div>
             </a>
@@ -51,6 +52,7 @@
                 <div class="task__list--toggle">
                   <%= link_to "TODOにする", toggle_path(task.id),method: :patch %>
                 </div>
+                <%= link_to "削除する",task_path(task.id),method: :delete,data: {confirm: "本当に削除しますか？"}, class:"delete" %>
               </div>
             </div>
           </a>

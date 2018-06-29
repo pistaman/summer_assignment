@@ -30,3 +30,20 @@ $(function(){
     });
   });
 });
+
+$(".task__list--toggle").click(function(){
+        $.ajax({
+            url: "/tasks/:id/toggle",
+            type: "PATCH",
+            data: {
+              id: 'aho'
+                },
+            dataType: "html",
+            success: function(data) {
+                alert("success");
+            },
+            error: function(data) {
+                alert("errror");
+            }
+        });
+    });

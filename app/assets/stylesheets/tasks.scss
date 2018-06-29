@@ -7,7 +7,7 @@ h1 {
 .task {
   &__right {
     width: 40%;
-    height: 100%;
+    min-height: 100vh;
     background-color: rgba(128, 135, 162, 0.5);
     padding-top: 68px;
     padding-bottom: 30px;
@@ -79,13 +79,19 @@ h1 {
     }
     &--buttons {
       margin-top: 20px;
-    }
-    &--toggle a {
-      color: #a09c9c;
-      font-weight: bold;
-      text-decoration: none;
-      &:hover {
-        color: #444;
+      display: flex;
+      position: relative;
+      & .delete {
+        position: absolute;
+        right: 0;
+      }
+      & a {
+        color: #a09c9c;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+          color: #444;
+        }
       }
     }
   }
