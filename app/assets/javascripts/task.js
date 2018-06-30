@@ -44,10 +44,10 @@ $(document).ready(function(){
             param : {is_done:value}
           },
         }).done(function(data) {
-            $('.index__wrapper').json('.task__link');
-            alert("success");
+            // $('.index__wrapper').json('.task__link');
+            // alert("success");
         }).fail(function(data) {
-            alert('errror');
+            //lert('errror');
         })
     });
   });
