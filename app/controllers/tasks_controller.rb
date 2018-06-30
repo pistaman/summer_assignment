@@ -35,12 +35,9 @@ class TasksController < ApplicationController
   end
 
   def toggle
+    @tasks = Task.all
     @task = Task.find(params[:id])
     @task.toggle!(:is_done)
-    respond_to do |format|
-      format.html
-    end
-    redirect_to root_path
   end
 
   private

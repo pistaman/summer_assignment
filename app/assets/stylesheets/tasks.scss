@@ -151,23 +151,27 @@ h1 {
 
 .flash__message {
   &--success {
-    width: 50%;
+    width: 30%;
     background-color: #dff0d8;
     color: #3c763d;
     font-size: 14px;
     font-weight: bold;
     padding: 10px;
-    margin: 10px 30px;
+    margin-left: 20px;
     border-radius: 4px;
+    position: fixed;
+    top: 10%;
   }
   &--error {
-    width: 50%;
+    width: 30%;
     background-color: rgba(187, 0, 0, 0.1);
     color: rgba(187, 0, 0, 1);
     font-size: 14px;
     font-weight: bold;
     padding: 10px;
-    margin: 10px 30px;
+    margin-left: 20px;
     border-radius: 4px;
+    position: fixed;
+    top: 10%;
   }
 }
