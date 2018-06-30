@@ -18,5 +18,6 @@ module Summer
     config.action_view.field_error_proc = Proc.new do |html_tag, instance|
       html_tag
     end
+    config.web_console.whitelisted_ips = '10.0.2.2'
   end
 end
