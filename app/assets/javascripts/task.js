@@ -14,7 +14,7 @@ $(document).ready(function(){
   }
 
   $(function(){
-    $(".task__add").click(function(){
+    $(document).on('click',".task__add",function(){
       $(this).blur();
       if($(".modal__overlay")[0]) return false;
       $("body").append('<div class="modal__overlay"></div>');
@@ -31,7 +31,7 @@ $(document).ready(function(){
   });
 
   $(function(){
-    $('a[data-method="patch"]').click(function(){
+    $(document).on('click','a[data-method="patch"]',function(){
       var action = $(this).attr('href');
       var method = $(this).attr('data-method');
       var value = $(this).attr('value');
