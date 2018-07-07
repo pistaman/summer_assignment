@@ -31,11 +31,13 @@ $(document).ready(function(){
   });
 
   $(function(){
-    $(document).on('click','a[data-method="patch"]',function(){
+    $("body").on('click','a[data-method="patch"]',function(){
       var action = $(this).attr('href');
       var method = $(this).attr('data-method');
-      var value = $(this).attr('value');
+      var value = $(this).val();
       var id = action.split('/')[2];
+      var hoge = $(this).parents('.task__list');
+      console.log(hoge);
         $.ajax({
           url: action,
           type: method,
@@ -47,7 +49,7 @@ $(document).ready(function(){
             // $('.index__wrapper').json('.task__link');
             // alert("success");
         }).fail(function(data) {
-            //lert('errror');
+            // alert('errror');
         })
     });
   });

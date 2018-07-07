@@ -1,1 +1,5 @@
-$('.index__wrapper').html('<%= j(render partial: 'task') %>')
+if (<%= @task.is_done %> == true) {
+  $('.task__lists--done').append('<%= j(render partial: 'task',locals:{task:@task}) %>')
+} else {
+  $('.task__lists').append('<%= j(render partial: 'task',locals:{task:@task}) %>')
+}

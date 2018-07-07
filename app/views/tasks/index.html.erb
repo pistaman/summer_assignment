@@ -1,3 +1,35 @@
 <div class="index__wrapper">
-  <%= render partial: 'task' %>
+  <div class="task__left">
+    <h1>TODO list</h1>
+    <% if flash[:notice] %>
+      <p class="flash__message--success"><%= notice %></p>
+    <% elsif flash[:error] %>
+      <p class="flash__message--error"><%= flash.now[:error] %></p>
+    <% end %>
+    <div class="modal__form"><%= render 'form' %><%= fa_icon "times 2x",class:"modal__close" %></div>
+      <h2>TODO</h2>
+      <div class="task__lists">
+        <div class="task__add">
+           <a href="#"><%= fa_icon "plus 2x" %></a>
+        </div>
+        <% @tasks.each do |task| %>
+          <% if task.is_done == false %>
+            <%= render partial: 'task',locals:{task:task} %>
+          <% else %>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+  <div class="task__right">
+    <h2>DONE</h2>
+    <div class="task__lists--done">
+      <% @tasks.each do |task| %>
+        <% if task.is_done == true %>
+        <%= render partial: 'task',locals:{task:task} %>
+        <% else %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
 </div>

@@ -26,10 +26,11 @@ h1 {
     }
   }
   &__lists {
-    width: 90%;
+    width: 94%;
     margin: 0 auto;
-    &.done {
-      width: 94%;
+    &--done {
+      width: 90%;
+      margin: 0 auto;
     }
   }
   &__link {
@@ -66,10 +67,10 @@ h1 {
     &--body {
       color: #2b88d9;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 30px;
       border-bottom: 1px solid #eee;
       &.done {
-        font-size: 30px;
+        font-size: 20px;
       }
       &:hover {
         &:after {
