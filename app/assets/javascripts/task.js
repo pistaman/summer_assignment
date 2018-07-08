@@ -42,14 +42,6 @@
           url: action,
           type: method,
           dataType: 'json',
-          data: {
-            param : {is_done:value}
-          },
-        }).done(function(data) {
-            // $('.index__wrapper').json('.task__link');
-            // alert("success");
-        }).fail(function(data) {
-            // alert('errror');
         })
     });
   });
