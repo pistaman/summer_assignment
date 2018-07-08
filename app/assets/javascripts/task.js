@@ -36,8 +36,7 @@ $(document).ready(function(){
       var method = $(this).attr('data-method');
       var value = $(this).val();
       var id = action.split('/')[2];
-      var hoge = $(this).parents('.task__list');
-      console.log(hoge);
+      $(this).closest('.task__list').css('display','none');
         $.ajax({
           url: action,
           type: method,
