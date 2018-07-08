@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$("body").ready(function(){
   $(".flash__message--success").fadeOut(5000);
   $(".flash__message--error").fadeOut(5000);
 
@@ -14,7 +14,7 @@ $(document).ready(function(){
   }
 
   $(function(){
-    $(document).on('click',".task__add",function(){
+    $("body").on('click',".task__add",function(){
       $(this).blur();
       if($(".modal__overlay")[0]) return false;
       $("body").append('<div class="modal__overlay"></div>');
