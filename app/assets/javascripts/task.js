@@ -1,4 +1,4 @@
-$("body").ready(function(){
+$(window).on("load",function(){
   $(".flash__message--success").fadeOut(5000);
   $(".flash__message--error").fadeOut(5000);
 
