@@ -35,6 +35,7 @@ class TasksController < ApplicationController
   end
 
   def toggle
+    @tasks = Task.all
     @task = Task.find(params[:id])
     @task.toggle!(:is_done)
   end
