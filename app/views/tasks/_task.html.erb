@@ -1,5 +1,5 @@
-<a href="<%= edit_task_path(task.id) %>" class="task__link">
-  <div class="task__list">
+<div class="task__list">
+  <a href="<%= edit_task_path(task.id) %>" class="task__link">
     <div class="task__list--name">
       <%= task.name %>
     </div>
@@ -12,15 +12,15 @@
         <%= task.content %>
       </div>
     <% end %>
-    <div class="task__list--buttons">
-      <div class="task__list--toggle">
-        <% if(task.is_done == false) %>
-          <%= link_to "DONEにする",toggle_path(task.id),method: :patch, remote:true,value: task.is_done %>
-        <% else %>
-        <%= link_to "TODOにする",toggle_path(task.id),method: :patch, remote:true,value: task.is_done %>
-        <% end %>
-      </div>
-      <%= link_to "削除する",task_path(task.id),method: :delete,data: {confirm: "本当に削除しますか？"}, class:"delete" %>
+  </a>
+  <div class="task__list--buttons">
+    <div class="task__list--toggle">
+      <% if(task.is_done == false) %>
+        <%= link_to "DONEにする",toggle_path(task.id),method: :patch, remote:true,value: task.is_done %>
+      <% else %>
+      <%= link_to "TODOにする",toggle_path(task.id),method: :patch, remote:true,value: task.is_done %>
+      <% end %>
     </div>
+    <%= link_to "削除する",task_path(task.id),method: :delete,data: {confirm: "本当に削除しますか？"}, class:"delete" %>
   </div>
-</a>
+</div>
