@@ -25,7 +25,7 @@
     <div class="task__lists--done">
       <% @tasks.each do |task| %>
         <% if task.is_done == true %>
-        <%= render partial: 'task',locals:{task:task} %>
+          <%= render partial: 'task',locals:{task:task} %>
         <% else %>
         <% end %>
       <% end %>
