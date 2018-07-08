@@ -1,6 +1,7 @@
-$(window).on("load",function(){
-  $(".flash__message--success").fadeOut(5000);
-  $(".flash__message--error").fadeOut(5000);
+  $(function(){
+    $(".flash__message--success").fadeOut(5000);
+    $(".flash__message--error").fadeOut(5000);
+  });
 
   function centeringModalSyncer(){
   	var w = $(window).width();
@@ -52,5 +53,3 @@ $(window).on("load",function(){
         })
     });
   });
-
-});
