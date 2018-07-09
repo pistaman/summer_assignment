@@ -32,11 +32,10 @@
   });
 
   $(function(){
-    $("body").on('click','a[data-method="patch"]',function(){
+    $("body").on('click','.task__list--toggle',function(){
       var action = $(this).attr('href');
       var method = $(this).attr('data-method');
       var value = $(this).val();
-      var id = action.split('/')[2];
       $(this).closest('.task__list').css('display','none');
         $.ajax({
           url: action,
