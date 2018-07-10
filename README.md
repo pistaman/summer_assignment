@@ -1,5 +1,7 @@
 # README
 summer assignment
+
+url:https://kadai2-app.herokuapp.com/
 <!-- This README would normally document whatever steps are necessary to get the
 application up and running.
 
